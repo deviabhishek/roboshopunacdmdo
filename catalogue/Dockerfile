@@ -7,10 +7,11 @@ EXPOSE 8080
 WORKDIR /opt/server
 
 COPY package.json /opt/server/
+#THIS NPN INSTAL DEPENDINCES FOR PACKAGE.JSON
 
 RUN npm install
 
 COPY server.js /opt/server/
 
-CMD ["node", "server.js"]
+ENTRYPOINT ["node", "server.js"]
 
